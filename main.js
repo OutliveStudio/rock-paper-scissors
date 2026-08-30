@@ -41,7 +41,7 @@ function restartGame() {
 
     updateScoresDOM();
 
-     gameMessageDOM.innerText = "";
+     gameMessageDOM.innerText = "Pick rock, paper or scissors to begin.";
 }
 
 function updateScoresDOM() {
