@@ -55,9 +55,9 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Player picked ${humanChoice}, Computer picked ${computerChoice}.`)
     let winner;
 
-    if (humanChoice != computerChoice) {
+    if (humanChoice !== computerChoice) {
         roundNumber++; // We only increment round if its not a draw.
-        if ( (humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" && computerChoice == "rock") || (humanChoice == "scissors" && computerChoice == "paper") ) {
+        if ( (humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper") ) {
             winner = "Human";
             playerScore++;
         }   else {
@@ -70,13 +70,13 @@ function playRound(humanChoice, computerChoice) {
 
     updateScoresDOM();
 
-    if (winner != "draw"){
+    if (winner !== "draw"){
         gameMessageDOM.innerText = `Player picked ${humanChoice}, Computer picked ${computerChoice}. ${winner} gets 1 point!`;
     } else {
         gameMessageDOM.innerText = `Player picked ${humanChoice}, Computer picked ${computerChoice}. It's a draw!`;
     }
 
-    if (roundNumber == 5) {
+    if (roundNumber === 5) {
         gameRunning = false;
         let gameWinner = playerScore > computerScore && "You win!" || "Computer wins!";
         gameMessageDOM.innerText = `Game over! ${gameWinner}`
@@ -85,7 +85,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 document.querySelectorAll("button").forEach((button) => {
-    if (button.id != "restart-button") {
+    if (button.id !== "restart-button") {
         button.addEventListener("click", (event) => {
             let humanChoice = button.id;
             playRound(humanChoice, getComputerChoice());
