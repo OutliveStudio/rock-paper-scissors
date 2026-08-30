@@ -1,0 +1,44 @@
+* {
+    border: 1px solid red;
+}
+
+body {
+    background-color: rgb(161, 161, 161);
+    color: whitesmoke;
+    font-family: "Roboto", sans-serif;
+    height: 600px;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+}
+
+p {
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+}
+
+#scores {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+}
+
+#buttons {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    border-radius: 9999px;
+    width: 120px;
+    height: 40px;
+    font-size: 18px;;
+    background-color: rgb(87, 87, 87);
+    color:whitesmoke;
+    border: 1px solid rgb(52, 52, 52);
+}
