@@ -6,6 +6,7 @@ let gameRunning = true;
 const playerScoreDOM = document.getElementById("player-score");
 const computerScoreDOM = document.getElementById("computer-score");
 const gameMessageDOM = document.getElementById("game-message")
+const restartButtonDOM = document.getElementById("restart-button")
 
 
 function getComputerChoice() {
@@ -27,6 +28,11 @@ function getComputerChoice() {
     }
 
     return choice;
+}
+
+function restartGame() {
+    console.log("RESTART GAME");
+    restartButtonDOM.style.display = "none";
 }
 
 function updateScoresDOM() {
@@ -65,12 +71,19 @@ function playRound(humanChoice, computerChoice) {
         gameRunning = false;
         let gameWinner = playerScore > computerScore && "You win!" || "Computer wins!";
         gameMessageDOM.innerText = `Game over! ${gameWinner}`
+        restartButtonDOM.style.display = "block";
     }
 }
 
 document.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("click", (event) => {
-        humanChoice = button.id;
-        playRound(humanChoice, getComputerChoice());
-    });
+    if (button.id != "restart-button") {
+        button.addEventListener("click", (event) => {
+            let humanChoice = button.id;
+            playRound(humanChoice, getComputerChoice());
+        });
+    } else {
+        button.addEventListener("click", (event) => {
+            restartGame();
+        });
+    }
 });
