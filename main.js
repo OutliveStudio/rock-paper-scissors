@@ -4,6 +4,7 @@ let roundNumber = 0;
 
 const playerScoreDOM = document.getElementById("player-score");
 const computerScoreDOM = document.getElementById("computer-score");
+const gameMessageDOM = document.getElementById("game-message")
 
 
 function getComputerChoice() {
@@ -53,11 +54,9 @@ function playRound(humanChoice, computerChoice) {
     updateScoresDOM();
 
     if (winner != "draw"){
-        let winnerMessage = `Player picked ${humanChoice}, Computer picked ${computerChoice}. ${winner} gets 1 point!`;
-        console.log(winnerMessage);
+        gameMessageDOM.innerText = `Player picked ${humanChoice}, Computer picked ${computerChoice}. ${winner} gets 1 point!`;
     } else {
-        let winnerMessage = `Player picked ${humanChoice}, Computer picked ${computerChoice}. It's a draw!`;
-        console.log(winnerMessage);
+        gameMessageDOM.innerText = `Player picked ${humanChoice}, Computer picked ${computerChoice}. It's a draw!`;
     }
 }
 
