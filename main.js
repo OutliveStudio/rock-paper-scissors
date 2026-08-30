@@ -18,3 +18,9 @@ function getComputerChoice() {
 
     return choice;
 }
+
+document.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", (event) => {
+        console.log("SELECTED OPTION", button.id)
+    });
+});
