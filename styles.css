@@ -44,7 +44,7 @@ button {
 }
 
 #restart-button {
-    /*display: none;*/
+    display: none;
     width: 240px;
     height: 80px;
     font-size: 36px;

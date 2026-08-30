@@ -33,6 +33,15 @@ function getComputerChoice() {
 function restartGame() {
     console.log("RESTART GAME");
     restartButtonDOM.style.display = "none";
+
+    playerScore = 0;
+    computerScore = 0;
+    roundNumber = 0;
+    gameRunning = true;
+
+    updateScoresDOM();
+
+     gameMessageDOM.innerText = "";
 }
 
 function updateScoresDOM() {
